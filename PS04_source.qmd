@@ -1,6 +1,6 @@
 ---
 title: "Problem Set 04: Linear Regression"
-author: "Your Name"
+author: "Carson Fouts"
 date: last-modified
 date-format: "[Last modified on] MMMM DD, YYYY HH:mm:ss zzz"
 format: 
@@ -98,7 +98,7 @@ Does the relationship in @fig-TSG appear to be positive or negative? Does the re
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 1 Answers"}
-* Delete this and put your text answer here.
+-   Delete this and put your text answer here.
 :::
 
 ## The Correlation Coefficient (r)
@@ -176,7 +176,7 @@ We found a positive correlation coefficient between `trump_support` and `poverty
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 2 Answers"}
-* Delete this and put your text answer here.
+-   Delete this and put your text answer here.
 :::
 
 ## Making Predictions
@@ -208,7 +208,7 @@ What percent of Trump support would you expect at a value of 6% white poverty?
 
 ```
 
-* Delete this and put your text answer here.
+-   Delete this and put your text answer here.
 :::
 
 ::: {.callout-note icon="false" title="Problem 4"}
@@ -216,7 +216,7 @@ Do you think it is a good idea to predict Trump support at 85% white poverty, ba
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 4 Answers"}
-* Delete this and put your text answer here.
+-   Delete this and put your text answer here.
 :::
 
 ## Residuals
@@ -271,7 +271,7 @@ Do you expect the correlation coefficient (for `non_white` and `trump_support`) 
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 6 Answers"}
-* Delete this and put your text answer here.
+-   Delete this and put your text answer here.
 
 ```{r}
 # Type your code and comments inside the code chunk
@@ -289,9 +289,9 @@ Run a linear regression using `non_white` as the **explanatory** variable, and `
 
 ```
 
-* Delete this and put your text answer here.
+-   Delete this and put your text answer here.
 
-* Delete this and put your text answer here.
+-   Delete this and put your text answer here.
 :::
 
 ::: {.callout-note icon="false" title="Problem 8"}
@@ -304,7 +304,7 @@ Make a numerical prediction for the level of trump support for a region that has
 
 ```
 
-* Delete this and put your text answer here.
+-   Delete this and put your text answer here.
 :::
 
 ::: {.callout-note icon="false" title="Problem 9"}
@@ -317,7 +317,7 @@ Based on the evidence you have so far (scatterplots and correlation coefficients
 
 ```
 
-* Delete this and put your text answer here.
+-   Delete this and put your text answer here.
 :::
 
 ::: {.callout-note icon="false" title="Problem 10"}
@@ -372,4 +372,3 @@ There are many statistics classes and students using the Server. To keep the ser
 ```{r}
 sessionInfo()
 ```
-
