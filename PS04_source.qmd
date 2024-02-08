@@ -297,12 +297,14 @@ Run a linear regression using `non_white` as the **explanatory** variable, and `
 ::: {.callout-important icon="false" collapse="false" title="Problem 7 Answers"}
 ```{r}
 # Type your code and comments inside the code chunk
+nw_mod <- lm(trump_support ~ non_white, data = trump)
+get_regression_table(nw_mod)
 
 ```
 
--   Delete this and put your text answer here.
+-   The intercept is 58.3% (When the non white level is 0, the predicted average Trump support is 58.3%).
 
--   Delete this and put your text answer here.
+-   The slope is -0.269. (For every increase in non white level of 1 percentage point, there is an associated decrease in Trump support of 0.269 percentage points.)
 :::
 
 ::: {.callout-note icon="false" title="Problem 8"}
@@ -312,10 +314,13 @@ Make a numerical prediction for the level of trump support for a region that has
 ::: {.callout-important icon="false" collapse="false" title="Problem 8 Answers"}
 ```{r}
 # Type your code and comments inside the code chunk
+# Or better yet
+nw_70 <- predict(nw_mod, newdata = data.frame(non_white = 70))
+nw_70
 
 ```
 
--   Delete this and put your text answer here.
+-   The predicted percent of Trump support for a region that has 70% of humans that identify as a person of color is `r round(nw_70, 2)`.
 :::
 
 ::: {.callout-note icon="false" title="Problem 9"}
@@ -325,10 +330,12 @@ Based on the evidence you have so far (scatterplots and correlation coefficients
 ::: {.callout-important icon="false" collapse="false" title="Problem 9 Answers"}
 ```{r}
 # Type your code and comments inside the code chunk
+get_regression_table(nw_mod)
+get_regression_table(poverty_mod)
 
 ```
 
--   Delete this and put your text answer here.
+-   Based on the evidence so far, the non_white explanatory variable seems to be a better explanatory variable of Trump support because there are less outside variables that could effect the correlation like seen in the poverty example. There is also a negative slope with the non_white explanatory variable which makes more sense than the rapidly increasing slope seen in the poverty example.
 :::
 
 ::: {.callout-note icon="false" title="Problem 10"}
@@ -344,19 +351,26 @@ If Representative Ocasio-Cortez saw the regression line (`nw_mod`) and not the a
 ::: {.callout-important icon="false" collapse="false" title="Problem 10 Answers"}
 ```{r}
 # Type your code and comments inside the code chunk
+nw_61 <- predict(nw_mod, newdata = data.frame(non_white = 61))
+nw_61
 
 ```
 
-**A.** Delete this and put your text answer here.
+**A.** Her prediction of Trump support be for a region in which 61% of the people identify as non-white would be `r round(nw_61, 2)`.
 
 ```{r}
 # Type your code and comments inside the code chunk
+observed_value <- 58.3 + (-0.269 * 61)
+observed_value
+
+residual <- observed_value - nw_61
+residual
 
 ```
 
-**B.** Delete this and put your text answer here.
+**B.** Her prediction would be an underestimate because the residual is a negative number (specifically `r round(residual, 2)`).
 
-**C.** Delete this and put your text answer here.
+**C.** The residual for this prediction is `r round(residual, 2)`.
 :::
 
 # Turning in Your Work
