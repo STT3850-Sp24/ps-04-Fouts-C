@@ -100,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified on February 08, 2024 13:19:23 Eastern Standard Time</p>
+      <p class="date">Last modified on February 08, 2024 14:52:58 Eastern Standard Time</p>
     </div>
   </div>
   
@@ -775,7 +775,8 @@ Problem 7 Answers
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code and comments inside the code chunk</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>nw_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(trump_support <span class="sc">~</span> non_white, <span class="at">data =</span> trump)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">get_regression_table</span>(nw_mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>nw_mod_regression <span class="ot">&lt;-</span> <span class="fu">get_regression_table</span>(nw_mod)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>nw_mod_regression</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 7
   term      estimate std_error statistic p_value lower_ci upper_ci
@@ -785,8 +786,8 @@ Problem 7 Answers
 </div>
 </div>
 <ul>
-<li><p>The intercept is 58.3% (When the non white level is 0, the predicted average Trump support is 58.3%).</p></li>
-<li><p>The slope is -0.269. (For every increase in non white level of 1 percentage point, there is an associated decrease in Trump support of 0.269 percentage points.)</p></li>
+<li><p>The intercept is 58.33% (When the non white level is 0, the predicted average Trump support is 58.33%).</p></li>
+<li><p>The slope is -0.27. (For every increase in non white level of 1 percentage point, there is an associated decrease in Trump support of -0.27 percentage points).</p></li>
 </ul>
 </div>
 </div>

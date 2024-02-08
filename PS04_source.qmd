@@ -298,13 +298,14 @@ Run a linear regression using `non_white` as the **explanatory** variable, and `
 ```{r}
 # Type your code and comments inside the code chunk
 nw_mod <- lm(trump_support ~ non_white, data = trump)
-get_regression_table(nw_mod)
+nw_mod_regression <- get_regression_table(nw_mod)
+nw_mod_regression
 
 ```
 
--   The intercept is 58.3% (When the non white level is 0, the predicted average Trump support is 58.3%).
+-   The intercept is `r round((nw_mod_regression$estimate[1]), 2)`% (When the non white level is 0, the predicted average Trump support is `r round((nw_mod_regression$estimate[1]), 2)`%).
 
--   The slope is -0.269. (For every increase in non white level of 1 percentage point, there is an associated decrease in Trump support of 0.269 percentage points.)
+-   The slope is `r round((nw_mod_regression$estimate[2]), 2)`. (For every increase in non white level of 1 percentage point, there is an associated decrease in Trump support of `r round((nw_mod_regression$estimate[2]), 2)` percentage points).
 :::
 
 ::: {.callout-note icon="false" title="Problem 8"}
