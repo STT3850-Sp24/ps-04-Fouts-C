@@ -98,7 +98,7 @@ Does the relationship in @fig-TSG appear to be positive or negative? Does the re
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 1 Answers"}
--   Delete this and put your text answer here.
+-   The relationship in @fig-TSG appears to be positive and reasonably linear.
 :::
 
 ## The Correlation Coefficient (r)
@@ -176,7 +176,7 @@ We found a positive correlation coefficient between `trump_support` and `poverty
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 2 Answers"}
--   Delete this and put your text answer here.
+-   No, it is not reasonable to conclude that social policies that increase white poverty will cause an increase in Trump support because a correlation does not equal a causation. There can be other variables affecting this result that we can't see.
 :::
 
 ## Making Predictions
@@ -205,10 +205,11 @@ What percent of Trump support would you expect at a value of 6% white poverty?
 ::: {.callout-important icon="false" collapse="false" title="Problem 3 Answers"}
 ```{r}
 # Type your code and comments inside the code chunk
-
+sixWhitePov <- predict(poverty_mod, newdata = data.frame(poverty = 6))
+sixWhitePov
 ```
 
--   Delete this and put your text answer here.
+-   The predicted percent of Trump support at 6% white poverty is `r round(sixWhitePov, 2)`.
 :::
 
 ::: {.callout-note icon="false" title="Problem 4"}
@@ -216,7 +217,7 @@ Do you think it is a good idea to predict Trump support at 85% white poverty, ba
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 4 Answers"}
--   Delete this and put your text answer here.
+-   No, it isn't a good idea to predict a Trump support at 85% white poverty because we will get a predicted percent of Trump support of way above 100% based on looking at @fig-ts.
 :::
 
 ## Residuals
@@ -263,6 +264,14 @@ Generate a scatterplot with a best-fitting line with `non_white` as the explanat
 ::: {.callout-important icon="false" collapse="false" title="Problem 5 Answers"}
 ```{r}
 # Type your code and comments inside the code chunk
+ggplot(data = trump, aes(y = trump_support, x = non_white)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Percentage of non white voters", 
+       y = "Percentage of voters supporting Trump", 
+       title = "Trump support and non white voters in the US") +
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 :::
 
@@ -271,10 +280,12 @@ Do you expect the correlation coefficient (for `non_white` and `trump_support`) 
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 6 Answers"}
--   Delete this and put your text answer here.
+-   I would expect a negative correlation coefficient (for `non_white` and `trump_support`).
 
 ```{r}
 # Type your code and comments inside the code chunk
+trump %>%
+  summarise(r = cor(trump_support, non_white))
 
 ```
 :::
